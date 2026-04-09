@@ -2,13 +2,16 @@ import re
 
 from google import genai
 from google.genai import types
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 import os
 import json
 
-load_dotenv()
+# load_dotenv()
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+# ✅ fix
+api_key = os.getenv("GEMINI_API_KEY")
+print(f"API KEY LOADED: {api_key[:5] if api_key else 'NOT FOUND'}")
+client = genai.Client(api_key=api_key)
 
 def predict_ai(image_bytes: bytes, mime_type: str):
     prompt = """
