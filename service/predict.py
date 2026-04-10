@@ -9,7 +9,7 @@ import json
 # load_dotenv()
 
 # ✅ fix
-api_key = os.getenv("GEMINI_API_KEY")
+api_key = os.getenv("Gemini_API_Key")
 print(f"API KEY LOADED: {api_key[:5] if api_key else 'NOT FOUND'}")
 client = genai.Client(api_key=api_key)
 
