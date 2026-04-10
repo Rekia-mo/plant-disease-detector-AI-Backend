@@ -26,7 +26,7 @@ If the plant is healthy return:
 }
 ```
 If the image is NOT a plant return:
-```
+```json
 {
   "error": "not a plant"
 }
