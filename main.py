@@ -1,3 +1,4 @@
+from schemas.response import ResponseModel
 from service.predict import predict_ai
 from fastapi import FastAPI, File, HTTPException, UploadFile
 
@@ -9,7 +10,7 @@ api = FastAPI()
 def home():
     return {"status": "API running"}
 
-@api.post('/predict')
+@api.post('/predict',response_model=ResponseModel)
 async def predict(image: UploadFile = File(...)):
     
     if not image.content_type.startswith("image/"):
