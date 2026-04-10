@@ -16,20 +16,20 @@ The app also detects if the plant is healthy or if the uploaded image is not a p
 }
 ```
 If the plant is healthy return:
-```
-    {
-        "healthy": true,
-        "disease": null,
-        "description": "Plant looks healthy",
-        "treatment": [],
-        "severity": null
-    }
+```json
+{
+  "healthy": true,
+  "disease": null,
+  "description": "Plant looks healthy",
+  "treatment": [],
+  "severity": null
+}
 ```
 If the image is NOT a plant return:
 ```
-    {
-        "error": "not a plant"
-    }
+{
+  "error": "not a plant"
+}
 ```
 
 ## 🛠️ Tech Stack
