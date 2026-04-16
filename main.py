@@ -1,10 +1,17 @@
 from schemas.response import ResponseModel
 from service.predict import predict_ai
 from fastapi import FastAPI, File, HTTPException, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 
 api = FastAPI()
 
-
+api.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,  # must be False when using ["*"]
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @api.get('/')
 def home():
